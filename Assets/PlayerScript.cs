@@ -10,6 +10,5 @@ public class PlayerScript : MonoBehaviour {
 		float h = horizontalSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
 		float v = verticalSpeed * Time.deltaTime * Input.GetAxis("Vertical");
 		transform.Translate (h, v, 0);
-		//Debug.Log (transform.position);
 	}
 }
