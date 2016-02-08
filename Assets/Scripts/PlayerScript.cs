@@ -40,5 +40,4 @@ public class PlayerScript : MonoBehaviour {
 	void changeColor (Color color) {
 		this.GetComponent<SpriteRenderer> ().color = color;
 	}
-
 }
