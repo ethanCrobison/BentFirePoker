@@ -6,18 +6,26 @@ public class PlayerScript : MonoBehaviour {
 	public float horizontalSpeed = 2.0F;
 	public float verticalSpeed = 2.0F;
 
+	// todo make these into one function, hopefully
 	public event Action SpawnMinion = delegate {};
+	public event Action SpawnWard = delegate {};
+
+	private bool MinionType = true;
 
 	void Update () {
 		if (Input.GetButtonDown ("Spawn")) {
-			SpawnMinion.Invoke ();
+			if (MinionType) {
+				SpawnMinion.Invoke ();
+			} else {
+				SpawnWard.Invoke ();
+			}
 		}
 		if (Input.GetButtonDown ("Ability1")) {
-			Ability1 ();
+			MinionType = false;
+			ChangeColor (Color.cyan);
 		} else if (Input.GetButtonDown ("Ability2")) {
-			Ability2 ();
-		} else if (Input.GetButtonDown ("Ability3")) {
-		 	Ability3 ();
+			MinionType = true;
+			ChangeColor (Color.green);
 		}
 	}
 
@@ -26,18 +34,8 @@ public class PlayerScript : MonoBehaviour {
 		float v = verticalSpeed * Time.deltaTime * Input.GetAxis("Vertical");
 		transform.Translate (h, v, 0);
 	}
-
-	private void Ability1 () {
-		changeColor (Color.cyan);
-	}
-	private void Ability2 () {
-		changeColor (Color.green);
-	}
-	private void Ability3 () {
-		changeColor (Color.magenta);
-	}
-
-	private void changeColor (Color color) {
+		
+	private void ChangeColor (Color color) {
 		this.GetComponent<SpriteRenderer> ().color = color;
 	}
 }

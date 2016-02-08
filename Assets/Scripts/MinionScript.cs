@@ -7,21 +7,32 @@ public class MinionScript : MonoBehaviour {
 
 	private GameObject ThePlayer;
 	private Transform PlayerTrans;
+	// TODO make this into a function?
+	private bool behavior = true;
 
 	void Awake() {
 //		ThePlayer = GameObject.FindGameObjectWithTag ("Player");
 		PlayerTrans = GameObject.FindGameObjectWithTag ("Player").transform;
 	}
 
-	void Update () {
-		var distance = Vector2.Distance (this.transform.position, PlayerTrans.position);
-		if (distance > distanceThresh) {
-			followPlayer ();
+	void FixedUpdate () {
+		// TODO make this into a single function call (too kludgey right now)
+		if (behavior) {
+			var distance = Vector2.Distance (this.transform.position, PlayerTrans.position);
+			if (distance > distanceThresh) {
+				FollowPlayer ();
+			}
+		} else {
+			WatchNearby ();
 		}
 	}
 
-	void followPlayer() {
+	private void FollowPlayer() {
 		Vector3 trajectory = PlayerTrans.position - this.transform.position;
 		this.transform.Translate (Time.deltaTime * speed * trajectory);
+	}
+
+	private void WatchNearby() {
+		
 	}
 }

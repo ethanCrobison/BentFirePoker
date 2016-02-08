@@ -4,7 +4,7 @@ using System.Collections;
 
 public class UIScript : MonoBehaviour {
 
-	private int _MinionCount = 0;
+	private int _OrdinaryMinionCount = 0;
 
 	void Start () {
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
@@ -15,14 +15,15 @@ public class UIScript : MonoBehaviour {
 	}
 
 	private void OnMinionSpawn() {
-		_MinionCount += 1;
+		_OrdinaryMinionCount += 1;
 		UpdateMinionCount ();
 	}
 
 	private void UpdateMinionCount () {
 		GameObject minionTextObject = this.gameObject;
 		Text textComponent = minionTextObject.GetComponent<Text> ();
-		textComponent.text = string.Format ("Minion Count: {0}", _MinionCount);
+		textComponent.text = string.Format ("Ordinary Minion Count: {0}", _OrdinaryMinionCount);
+
 	}
 
 }
