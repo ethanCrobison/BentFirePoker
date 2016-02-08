@@ -13,11 +13,11 @@ public class PlayerScript : MonoBehaviour {
 			SpawnMinion.Invoke ();
 		}
 		if (Input.GetButtonDown ("Ability1")) {
-			ability1 ();
+			Ability1 ();
 		} else if (Input.GetButtonDown ("Ability2")) {
-			ability2 ();
+			Ability2 ();
 		} else if (Input.GetButtonDown ("Ability3")) {
-		 	ability3 ();
+		 	Ability3 ();
 		}
 	}
 
@@ -27,17 +27,17 @@ public class PlayerScript : MonoBehaviour {
 		transform.Translate (h, v, 0);
 	}
 
-	void ability1 () {
+	private void Ability1 () {
 		changeColor (Color.cyan);
 	}
-	void ability2 () {
+	private void Ability2 () {
 		changeColor (Color.green);
 	}
-	void ability3 () {
+	private void Ability3 () {
 		changeColor (Color.magenta);
 	}
 
-	void changeColor (Color color) {
+	private void changeColor (Color color) {
 		this.GetComponent<SpriteRenderer> ().color = color;
 	}
 
