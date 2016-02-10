@@ -19,12 +19,6 @@ public class MinionManager : MonoBehaviour {
 		ps.SpawnWard += SpawnNewWard;
 	}
 
-	void Update() {
-		if (Input.GetMouseButtonDown (0)) {
-			Debug.Log ("hi");
-		}
-	} 
-
 	private void SpawnNewMinion() {
 		GameObject minion = GameObject.Instantiate (MinionPrefab);
 		minion.transform.position = NewSpawnPoint ();

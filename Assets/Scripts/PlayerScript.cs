@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour {
 	public float horizontalSpeed = 2.0F;
 	public float verticalSpeed = 2.0F;
 
-	// todo make these into one function, hopefully
+	// TODO make these into one function, hopefully
 	public event Action SpawnMinion = delegate {};
 	public event Action SpawnWard = delegate {};
 

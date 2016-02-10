@@ -14,4 +14,9 @@ public class DummyScript : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+	void OnTriggerEnter2D () {
+		Debug.Log ("hi");
+		hp -= 100;
+	}
 }

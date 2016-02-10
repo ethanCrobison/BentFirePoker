@@ -22,7 +22,7 @@ public class UIScript : MonoBehaviour {
 	private void UpdateMinionCount () {
 		GameObject minionTextObject = this.gameObject;
 		Text textComponent = minionTextObject.GetComponent<Text> ();
-		textComponent.text = string.Format ("Ordinary Minion Count: {0}", _OrdinaryMinionCount);
+		textComponent.text = string.Format ("Plain Count: {0}", _OrdinaryMinionCount);
 
 	}
 
