@@ -24,7 +24,10 @@ public class MineScript : MonoBehaviour {
 		TimeSpan ts = DateTime.Now - primeTime;
 		if (ts.Seconds > 1 && s == STATE.PRIMED) {
 			Debug.Log ("bang");
+
 			s = STATE.DEAD;
+
+
 		}
 	
 	}
