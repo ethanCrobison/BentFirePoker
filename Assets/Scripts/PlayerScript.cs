@@ -14,17 +14,11 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetButtonDown ("Spawn")) {
-			if (MinionType) {
-				SpawnMinion.Invoke ();
-			} else {
-				SpawnWard.Invoke ();
-			}
+			Spawn ();
 		}
 		if (Input.GetButtonDown ("Ability1")) {
-			MinionType = false;
 			ChangeColor (Color.cyan);
 		} else if (Input.GetButtonDown ("Ability2")) {
-			MinionType = true;
 			ChangeColor (Color.green);
 		}
 	}
@@ -34,7 +28,15 @@ public class PlayerScript : MonoBehaviour {
 		float v = verticalSpeed * Time.deltaTime * Input.GetAxis("Vertical");
 		transform.Translate (h, v, 0);
 	}
-		
+
+	private void Spawn() {
+		if (MinionType) {
+			SpawnMinion.Invoke ();
+		} else {
+			SpawnWard.Invoke ();
+		}
+	}
+
 	private void ChangeColor (Color color) {
 		this.GetComponent<SpriteRenderer> ().color = color;
 	}
