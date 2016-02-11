@@ -3,8 +3,10 @@ using System;
 
 public class PlayerScript : MonoBehaviour {
 
-	public float horizontalSpeed = 2.0F;
-	public float verticalSpeed = 2.0F;
+	private Rigidbody2D rigidbody;
+	private Vector2 velocity;
+	private float speed = 2.0F;
+
 
 	// TODO make these into one function, hopefully
 	public event Action SpawnMinion = delegate {};
@@ -12,7 +14,14 @@ public class PlayerScript : MonoBehaviour {
 
 	private bool MinionType = true;
 
+	void Start() {
+		rigidbody = this.GetComponent<Rigidbody2D> ();
+	}
+
 	void Update () {
+
+		velocity = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical")).normalized * speed;
+
 		if (Input.GetButtonDown ("Spawn")) {
 			Spawn ();
 		}
@@ -24,9 +33,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		float h = horizontalSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
-		float v = verticalSpeed * Time.deltaTime * Input.GetAxis("Vertical");
-		transform.Translate (h, v, 0);
+		rigidbody.MovePosition (rigidbody.position + velocity * Time.fixedDeltaTime);
 	}
 
 	private void Spawn() {
