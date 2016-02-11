@@ -6,7 +6,8 @@ public class MinionScript : MonoBehaviour {
 	public float distanceThresh = 3.0F;
 
 	// TODO make these into a dag
-	private Vector3 targetPosition = Vector3.one;
+	private Vector3 targetPosition;
+	private bool hasTarget = false;
 
 	private GameObject ThePlayer;
 	private Transform PlayerTrans;
@@ -22,28 +23,36 @@ public class MinionScript : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			targetPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			targetPosition.z = 0.0f;
+			hasTarget = true;
 		}
 	}
 
 	void FixedUpdate () {
-		if (targetPosition.z == 0.0) {
-			var trajectory = TrajectoryBetween (targetPosition, this.transform.position);
-			this.transform.Translate (Time.deltaTime * speed * trajectory);
+		if (hasTarget) {
+			GoToTargetPos ();	
 		} else {
 			MinionBehavior ();
 		}
 	}
 
 	private void FollowPlayer() {
-	var distance = Vector2.Distance (this.transform.position, PlayerTrans.position);
+		var distance = Vector2.Distance (this.transform.position, PlayerTrans.position);
 		if (distance > distanceThresh) {
 			var trajectory = TrajectoryBetween (PlayerTrans.position, this.transform.position);
 			this.transform.Translate (Time.deltaTime * speed * trajectory);
 		}
 	}
 
+	private void GoToTargetPos() {
+		var trajectory = TrajectoryBetween (targetPosition, this.transform.position);
+		this.transform.Translate (Time.deltaTime * speed * trajectory);
+
+		if (Vector2.Distance (this.transform.position, targetPosition) < 0.1f) {
+			hasTarget = false;
+		}
+	}
+
 	private Vector3 TrajectoryBetween(Vector3 goal, Vector3 pos) {
-		Vector3 trajectory = (goal - pos).normalized * speed;
-		return trajectory;
+		return (goal - pos).normalized * speed;
 	}
 }

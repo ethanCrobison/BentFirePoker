@@ -6,8 +6,6 @@ public class MinionManager : MonoBehaviour {
 	public GameObject MinionPrefab;
 	public GameObject WardPrefab;
 
-	public event Action TargetSet;
-
 	private float minX = -4;
 	private float maxX =  4;
 	private float minY = -4;
