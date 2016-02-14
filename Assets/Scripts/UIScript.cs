@@ -7,9 +7,9 @@ public class UIScript : MonoBehaviour {
 	private int _OrdinaryMinionCount = 0;
 
 	void Start () {
-		GameObject player = GameObject.FindGameObjectWithTag ("Player");
-		PlayerScript ps = player.GetComponent<PlayerScript> ();
-		ps.SpawnMinion += OnMinionSpawn;
+		var manager = GameObject.Find ("MinionManager");
+		var mm = manager.GetComponent<MinionManager> ();
+		mm.NewMinion += OnMinionSpawn;
 
 		UpdateMinionCount ();
 	}

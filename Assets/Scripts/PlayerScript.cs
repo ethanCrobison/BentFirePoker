@@ -3,23 +3,20 @@ using System;
 
 public class PlayerScript : MonoBehaviour {
 
-	private Rigidbody2D rigidbody;
+	private Rigidbody2D playerRigid;
 	private Vector2 velocity;
 	private float speed = 2.0F;
 
+	private float cooldown = 3.0F;
 
-	// TODO make these into one function, hopefully
+
 	public event Action SpawnMinion = delegate {};
-	public event Action SpawnWard = delegate {};
-
-	private bool MinionType = true;
 
 	void Start() {
-		rigidbody = this.GetComponent<Rigidbody2D> ();
+		playerRigid = this.GetComponent<Rigidbody2D> ();
 	}
 
 	void Update () {
-
 		velocity = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical")).normalized * speed;
 
 		if (Input.GetButtonDown ("Spawn")) {
@@ -27,21 +24,15 @@ public class PlayerScript : MonoBehaviour {
 		}
 		if (Input.GetButtonDown ("Ability1")) {
 			ChangeColor (Color.cyan);
-		} else if (Input.GetButtonDown ("Ability2")) {
-			ChangeColor (Color.green);
 		}
 	}
 
 	void FixedUpdate() {
-		rigidbody.MovePosition (rigidbody.position + velocity * Time.fixedDeltaTime);
+		playerRigid.MovePosition (playerRigid.position + velocity * Time.fixedDeltaTime);
 	}
 
 	private void Spawn() {
-		if (MinionType) {
-			SpawnMinion.Invoke ();
-		} else {
-			SpawnWard.Invoke ();
-		}
+		SpawnMinion.Invoke ();
 	}
 
 	private void ChangeColor (Color color) {
