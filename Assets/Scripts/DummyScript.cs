@@ -3,20 +3,17 @@ using System.Collections;
 
 public class DummyScript : MonoBehaviour {
 
-	private int hp;
+	public int hp;
 
-	void Awake() {
-		this.hp = 100;
+	// Use this for initialization
+	void Start () {
+		hp = 500;
 	}
-
+	
+	// Update is called once per frame
 	void Update () {
 		if (hp <= 0) {
 			Destroy (gameObject);
 		}
-	}
-
-	void OnTriggerEnter2D () {
-		Debug.Log ("hi");
-		hp -= 100;
 	}
 }
