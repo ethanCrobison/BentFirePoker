@@ -11,9 +11,12 @@ public class MapGenerator : MonoBehaviour {
 	public bool useRandomSeed = true;
 
 	public GameObject WallPrefab;
+	public GameObject TreasurePrefab;
 
 	private Queue<GameObject> _WallsInUse = new Queue<GameObject>();
 	private Queue<GameObject> _WallsAvailable = new Queue<GameObject>();
+	private Queue<GameObject> _TreasuresInUse = new Queue<GameObject>();
+	private Queue<GameObject> _TreasuresAvailable = new Queue<GameObject>();
 
 
 	[Range(0,100)] public int randomFillPercent;
@@ -22,17 +25,13 @@ public class MapGenerator : MonoBehaviour {
 
 	void Start() {
 		GenerateMap();
-		GenerateMap();
+		PlaceWalls ();
+		// TODO treasure placement
+		PlaceTreasures ();
 	}
 
-//	void Update() {
-//		if (Input.GetMouseButtonDown (0)) {
-//			GenerateMap ();
-//		}
-//	}
-
 	void GenerateMap() {
-			GameObject wall;
+		GameObject wall;
 		while (_WallsInUse.Count > 0) {
 			wall = _WallsInUse.Dequeue ();
 			wall.SetActive (false);
@@ -45,8 +44,6 @@ public class MapGenerator : MonoBehaviour {
 		for (int i = 0; i < 2; i ++) {
 			SmoothMap();
 		}
-
-		PlaceWalls ();
 	}
 
 
@@ -102,6 +99,7 @@ public class MapGenerator : MonoBehaviour {
 	}
 
 	private void PlaceWalls () {
+		// TODO use the "pill" method to instantiate fewer prefabs
 		if (map != null) {
 			for (int x = 0; x < width; x ++) {
 				for (int y = 0; y < height; y ++) {
@@ -118,12 +116,16 @@ public class MapGenerator : MonoBehaviour {
 		if (_WallsAvailable.Count > 0) {
 			wall = _WallsAvailable.Dequeue ();
 			wall.SetActive (true);
-			var trans = wall.transform;
-			trans.position = (new Vector3 (x, y, 0));
 		} else {
 			wall = GameObject.Instantiate (WallPrefab);
 			wall.transform.SetParent (this.transform);
 		}
+		var trans = wall.transform;
+		trans.position = (new Vector3 (0.5F + x, 0.5F + y, 0));
 		_WallsInUse.Enqueue (wall);
+	}
+
+	private void PlaceTreasures() {
+		
 	}
 }
