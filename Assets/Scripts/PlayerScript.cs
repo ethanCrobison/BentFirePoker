@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour {
 	private Vector2 velocity;
 	private float speed = 2.0F;
 
-	private float cooldown = 3.0F;
+	//private float cooldown = 3.0F;
 
 
 	public event Action SpawnMinion = delegate {};
@@ -18,6 +18,9 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update () {
 		velocity = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical")).normalized * speed;
+		if (Input.GetButtonDown("Dodge")) {
+			velocity *= 20;
+		}
 
 		if (Input.GetButtonDown ("Spawn")) {
 			Spawn ();
