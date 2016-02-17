@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System;
 
 public class MinionManager : MonoBehaviour {
@@ -16,11 +17,14 @@ public class MinionManager : MonoBehaviour {
 	private int minionCount;
 	private int maxMinions = 5;
 
+//	private Queue<GameObject> _Minions = new Queue<GameObject>();
+
 	void Start () {
 		minionCount = 0;
 		var player = GameObject.FindGameObjectWithTag("Player");
 		var ps = player.GetComponent<PlayerScript> ();
 		ps.SpawnMinion += SpawnNewMinion;
+		SpawnNewMinion ();
 	}
 
 	private void SpawnNewMinion() {

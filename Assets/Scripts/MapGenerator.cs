@@ -10,8 +10,12 @@ public class MapGenerator : MonoBehaviour {
 	public string seed;
 	public bool useRandomSeed;
 
-	[Range(0,100)]
-	public int randomFillPercent;
+	public GameObject WallPrefab;
+
+	private static Texture2D _MapTexture;
+	private static GUIStyle _MapStyle;
+
+	[Range(0,100)] public int randomFillPercent;
 
 	int[,] map;
 
@@ -20,8 +24,8 @@ public class MapGenerator : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetMouseButtonDown(0)) {
-			GenerateMap();
+		if (Input.GetMouseButtonDown (0)) {
+			GenerateMap ();
 		}
 	}
 
@@ -29,9 +33,11 @@ public class MapGenerator : MonoBehaviour {
 		map = new int[width,height];
 		RandomFillMap();
 
-		for (int i = 0; i < 5; i ++) {
+		for (int i = 0; i < 2; i ++) {
 			SmoothMap();
 		}
+
+		PlaceWalls ();
 	}
 
 
@@ -86,14 +92,16 @@ public class MapGenerator : MonoBehaviour {
 		return wallCount;
 	}
 
-
-	void OnDrawGizmos() {
+	private void PlaceWalls () {
 		if (map != null) {
 			for (int x = 0; x < width; x ++) {
 				for (int y = 0; y < height; y ++) {
-					Gizmos.color = (map[x,y] == 1)?Color.black:Color.white;
-					Vector3 pos = new Vector3(0,0,0);
-					Gizmos.DrawCube(pos,Vector3.one);
+					Debug.Log (map [x, y]);
+					if (map [x, y] == 1) {
+						GameObject wall = GameObject.Instantiate (WallPrefab);
+						var trans = wall.transform;
+						trans.Translate (new Vector3 (x, y, 0));
+					}
 				}
 			}
 		}

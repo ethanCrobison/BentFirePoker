@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
 	private Rigidbody2D playerRigid;
 	private Vector2 velocity;
-	private float speed = 2.0F;
+	private float speed = 5.0F;
 
 	//private float cooldown = 3.0F;
 
