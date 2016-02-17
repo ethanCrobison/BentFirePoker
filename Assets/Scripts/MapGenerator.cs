@@ -8,7 +8,7 @@ public class MapGenerator : MonoBehaviour {
 	public int height;
 
 	public string seed;
-	public bool useRandomSeed;
+	public bool useRandomSeed = true;
 
 	public GameObject WallPrefab;
 
@@ -22,13 +22,14 @@ public class MapGenerator : MonoBehaviour {
 
 	void Start() {
 		GenerateMap();
+		GenerateMap();
 	}
 
-	void Update() {
-		if (Input.GetMouseButtonDown (0)) {
-			GenerateMap ();
-		}
-	}
+//	void Update() {
+//		if (Input.GetMouseButtonDown (0)) {
+//			GenerateMap ();
+//		}
+//	}
 
 	void GenerateMap() {
 			GameObject wall;
@@ -51,7 +52,7 @@ public class MapGenerator : MonoBehaviour {
 
 	void RandomFillMap() {
 		if (useRandomSeed) {
-			seed = Time.time.ToString();
+			seed = Time.time.ToString ();
 		}
 
 		System.Random pseudoRandom = new System.Random(seed.GetHashCode());
@@ -121,6 +122,7 @@ public class MapGenerator : MonoBehaviour {
 			trans.position = (new Vector3 (x, y, 0));
 		} else {
 			wall = GameObject.Instantiate (WallPrefab);
+			wall.transform.SetParent (this.transform);
 		}
 		_WallsInUse.Enqueue (wall);
 	}

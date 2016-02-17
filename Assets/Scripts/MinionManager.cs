@@ -17,6 +17,7 @@ public class MinionManager : MonoBehaviour {
 	private int minionCount;
 	private int maxMinions = 5;
 
+
 //	private Queue<GameObject> _Minions = new Queue<GameObject>();
 
 	void Start () {
