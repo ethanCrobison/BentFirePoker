@@ -106,26 +106,24 @@ public class Map {
 		}
 	}
 
+	public int GetPlayerX(){ return rooms.Peek ().GetCenterX (); }
+	public int GetPlayerY(){ return rooms.Peek ().GetCenterY (); }
+
 	public void PathFind(int x1, int y1, int x2, int y2) {
 		int[,] visited = (int[,]) tiles.Clone ();
-		int curX, curY;
 		int top;
 		if (visited [x1, y1] != 0) {
 //			return null;
 		} else {
 			top = 2;
-			while (true) {
-				break;
-			}
+//			while (true) {
+//				for (int x = 0; x < width; x++) {
+//					for (int y = 0; y < height; y++) {
+//						
+//					}
+//				}
+//			}
 		}
-	}
-
-	public int GetPlayerX(){
-		return rooms.Peek ().GetCenterX ();
-	}
-
-	public int GetPlayerY(){
-		return rooms.Peek ().GetCenterY ();
 	}
 }
 
