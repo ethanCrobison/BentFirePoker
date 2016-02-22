@@ -9,7 +9,10 @@ public class TreasureScript : MonoBehaviour {
 		TUS = GameObject.Find ("TreasureUI").GetComponent<TreasureUIScript> ();
 	}
 
-	void OnTriggerEnter2D () {
-		TUS.IncrementTreasure ();
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			TUS.IncrementTreasure ();
+			Destroy (this.gameObject);
+		}
 	}
 }

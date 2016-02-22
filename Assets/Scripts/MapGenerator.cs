@@ -15,9 +15,6 @@ public class MapGenerator : MonoBehaviour {
 
 	private Queue<GameObject> _WallsInUse = new Queue<GameObject>();
 	private Queue<GameObject> _WallsAvailable = new Queue<GameObject>();
-	private Queue<GameObject> _TreasuresInUse = new Queue<GameObject>();
-	private Queue<GameObject> _TreasuresAvailable = new Queue<GameObject>();
-
 
 	[Range(0,100)] public int randomFillPercent;
 
@@ -38,12 +35,15 @@ public class MapGenerator : MonoBehaviour {
 			_WallsAvailable.Enqueue (wall);
 		}
 
-		map = new int[width,height];
-		RandomFillMap();
+		var template = new Map(width, height);
+		map = template.tiles;
+		var player = GameObject.FindGameObjectWithTag ("Player");
+		player.transform.position = new Vector3(template.GetPlayerX(), template.GetPlayerY(), 0F);
+//		RandomFillMap();
 
-		for (int i = 0; i < 2; i ++) {
-			SmoothMap();
-		}
+//		for (int i = 0; i < 2; i ++) {
+//			SmoothMap();
+//		}
 	}
 
 
@@ -129,3 +129,4 @@ public class MapGenerator : MonoBehaviour {
 		
 	}
 }
+
