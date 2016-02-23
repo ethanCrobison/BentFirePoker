@@ -8,7 +8,8 @@ public class PlayerScript : MonoBehaviour {
 		WALKING,
 		DODGING,
 		INVOKING,
-		CASTING
+		CASTING,
+		DEAD
 	};
 	private State STATE;
 
@@ -30,17 +31,14 @@ public class PlayerScript : MonoBehaviour {
 
 		// CHECK MOVEMENT STATE
 		if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
+			
 			if (Input.GetButtonDown ("Dodge")) {				// Dodge button pressed
 
 				double timeSinceLastDodge = DateTime.Now.Subtract (lastDodge).TotalMilliseconds;
-
-				Debug.Log (timeSinceLastDodge);
-
 				if (timeSinceLastDodge >= dodgeCooldown) {		// Cooldown period has expired
+					
 					STATE = State.DODGING;						// Update dodge status
 					lastDodge = DateTime.Now;
-
-					Debug.Log ("#2");
 				} else {
 					STATE = State.WALKING;
 				}
