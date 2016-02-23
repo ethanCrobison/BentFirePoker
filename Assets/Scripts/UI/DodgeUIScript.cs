@@ -17,6 +17,6 @@ public class DodgeUIScript : MonoBehaviour {
 	private void UpdateDodgeVal() {
 		GameObject minionTextObject = this.gameObject;
 		Text textComponent = minionTextObject.GetComponent<Text> ();
-		textComponent.text = string.Format ("Dodge Cooldown: {0:F1}", player.ReportCooldown());
+		textComponent.text = string.Format ("Dodge Cooldown: {0:F1}", player.GetTimeSinceLastDodge());
 	}
 }
