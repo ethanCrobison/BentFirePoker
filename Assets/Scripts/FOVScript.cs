@@ -5,13 +5,13 @@ public class FOVScript : MonoBehaviour
 {
 
 	private Transform target;
-	private BoxCollider2D thisBoxCollider;
+	private CircleCollider2D thisCircleCollider;
 
 	// Use this for initialization
 	void Start ()
 	{
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
-		thisBoxCollider = GetComponent<BoxCollider2D> ();
+		thisCircleCollider = GetComponent<CircleCollider2D> ();
 	}
 
 	public bool canSeePlayer()
@@ -19,9 +19,9 @@ public class FOVScript : MonoBehaviour
 		Vector2 currentLocation = transform.position;
 		Vector2 playerLocation = target.position;
 
-		thisBoxCollider.enabled = false;
+		thisCircleCollider.enabled = false;
 		RaycastHit2D hit = Physics2D.Raycast (currentLocation, playerLocation - currentLocation);
-		thisBoxCollider.enabled = true;
+		thisCircleCollider.enabled = true;
 
 		return (hit.collider.gameObject.tag == "Player");
 	}

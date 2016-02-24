@@ -3,7 +3,7 @@ using System;
 
 public class PlayerScript : MonoBehaviour {
 
-	private enum State {
+	public enum State {
 		IDLE,
 		WALKING,
 		DODGING,
@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour {
 		CASTING,
 		DEAD
 	};
-	private State STATE;
+	public State STATE;
 
 	private static float walkingSpeed = 5.0F;
 
@@ -28,6 +28,8 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update () {
+		if (STATE == State.DEAD)
+			return;
 
 		// CHECK MOVEMENT STATE
 		if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
@@ -64,6 +66,9 @@ public class PlayerScript : MonoBehaviour {
 		switch (STATE) {
 
 		case State.IDLE:
+			return;
+
+		case State.DEAD:
 			return;
 
 		case State.WALKING:
