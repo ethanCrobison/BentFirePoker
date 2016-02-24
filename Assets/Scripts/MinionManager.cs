@@ -22,9 +22,9 @@ public class MinionManager : MonoBehaviour {
 
 	void Start () {
 		minionCount = 0;
-		var player = GameObject.FindGameObjectWithTag("Player");
-		var ps = player.GetComponent<PlayerScript> ();
-		ps.SpawnMinion += SpawnNewMinion;
+		var eventBus = GameObject.Find("EventBus").GetComponent<EventsScript>();
+		eventBus.EventNewMinion += SpawnNewMinion;
+		// TODO ask Rob why this needs to be here even if the event is called in player
 		SpawnNewMinion ();
 	}
 

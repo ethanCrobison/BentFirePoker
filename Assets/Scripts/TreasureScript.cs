@@ -3,16 +3,16 @@ using System.Collections;
 
 public class TreasureScript : MonoBehaviour {
 
-	private TreasureUIScript TUS;
+	public int value { get; private set;}
+	private EventsScript EventBus;
 
-	void Awake() {
-		TUS = GameObject.Find ("TreasureUI").GetComponent<TreasureUIScript> ();
+	void start() {
+		value = 10;
+		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
 	}
-
 	void OnTriggerEnter2D (Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			TUS.IncrementTreasure ();
-			Destroy (this.gameObject);
+		if (other.CompareTag ("Player")) {
+			EventBus.TreasureCollected ();
 		}
 	}
 }

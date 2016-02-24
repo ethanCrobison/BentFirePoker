@@ -22,9 +22,7 @@ public class MapGenerator : MonoBehaviour {
 
 	void Start() {
 		GenerateMap();
-		PlaceWalls ();
-		// TODO treasure placement
-		PlaceTreasures ();
+		PlaceTiles ();
 	}
 
 	void GenerateMap() {
@@ -39,72 +37,21 @@ public class MapGenerator : MonoBehaviour {
 		map = template.tiles;
 		var player = GameObject.FindGameObjectWithTag ("Player");
 		player.transform.position = new Vector3(template.GetPlayerX(), template.GetPlayerY(), 0F);
-//		RandomFillMap();
-
-//		for (int i = 0; i < 2; i ++) {
-//			SmoothMap();
-//		}
 	}
 
-
-	void RandomFillMap() {
-		if (useRandomSeed) {
-			seed = Time.time.ToString ();
-		}
-
-		System.Random pseudoRandom = new System.Random(seed.GetHashCode());
-
-		for (int x = 0; x < width; x ++) {
-			for (int y = 0; y < height; y ++) {
-				if (x == 0 || x == width-1 || y == 0 || y == height -1) {
-					map[x,y] = 1;
-				}
-				else {
-					map[x,y] = (pseudoRandom.Next(0,100) < randomFillPercent)? 1: 0;
-				}
-			}
-		}
-	}
-
-	void SmoothMap() {
-		for (int x = 1; x < width - 1; x ++) {
-			for (int y = 1; y < height - 1; y ++) {
-				int neighbourWallTiles = GetSurroundingWallCount(x,y);
-
-				if (neighbourWallTiles > 4)
-					map[x,y] = 1;
-				else if (neighbourWallTiles < 4)
-					map[x,y] = 0;
-
-			}
-		}
-	}
-
-	int GetSurroundingWallCount(int gridX, int gridY) {
-		int wallCount = 0;
-		for (int neighbourX = gridX - 1; neighbourX <= gridX + 1; neighbourX ++) {
-			for (int neighbourY = gridY - 1; neighbourY <= gridY + 1; neighbourY ++) {
-				if (neighbourX >= 0 && neighbourX < width && neighbourY >= 0 && neighbourY < height) {
-					if (neighbourX != gridX || neighbourY != gridY) {
-						wallCount += map[neighbourX,neighbourY];
-					}
-				}
-				else {
-					wallCount ++;
-				}
-			}
-		}
-
-		return wallCount;
-	}
-
-	private void PlaceWalls () {
-		// TODO use the "pill" method to instantiate fewer prefabs
+	private void PlaceTiles () {
 		if (map != null) {
 			for (int x = 0; x < width; x ++) {
 				for (int y = 0; y < height; y ++) {
-					if (map [x, y] == 1) {
+					switch (map[x, y]) {
+					case Map.Wall:
 						PlaceWall (x, y);
+						break;
+					case Map.Treasure:
+						PlaceTreasure (x, y);
+						break;
+//					default:
+						
 					}
 				}
 			}
@@ -121,12 +68,14 @@ public class MapGenerator : MonoBehaviour {
 			wall.transform.SetParent (this.transform);
 		}
 		var trans = wall.transform;
-		trans.position = (new Vector3 (0.5F + x, 0.5F + y, 0));
+		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
 		_WallsInUse.Enqueue (wall);
 	}
 
-	private void PlaceTreasures() {
-		
+	private void PlaceTreasure(int x, int y) {
+		GameObject treasure = GameObject.Instantiate (TreasurePrefab);
+		var trans = treasure.transform;
+		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
 	}
 }
 

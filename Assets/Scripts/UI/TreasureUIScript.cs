@@ -7,11 +7,13 @@ public class TreasureUIScript : MonoBehaviour {
 	private int TreasureCount;
 
 	void Start() {
+		var eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
+		eventBus.EventTreasureCollected += IncrementTreasure;
 		TreasureCount = 10;
 		UpdateTreasureCount ();
 	}
 
-	public void IncrementTreasure() {
+	private void IncrementTreasure() {
 		TreasureCount += 1;
 		UpdateTreasureCount ();
 	}

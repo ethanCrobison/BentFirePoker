@@ -6,6 +6,9 @@ public class Map {
 	private static int MAXROOMSIZE = 15;
 	private static int MAXROOMCOUNT = 40;
 
+	public const int Wall = 1;
+	public const int Treasure = 2;
+
 	private int width, height;
 	public int[,] tiles { get; private set;}
 	private Queue<Room> rooms = new Queue<Room> ();
@@ -21,18 +24,10 @@ public class Map {
 		tiles = new int[width, height];
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				tiles [x, y] = 1;
+				tiles [x, y] = Wall;
 			}
 		}
 		RandomFill();
-		PathFind (5, 5, 6, 6);
-	}
-	private void CreateRoom(Room room) {
-		for (int x = room.x1; x < room.x2 - 1; x++) {
-			for (int y = room.y1; y < room.y2 - 1; y++) {
-				tiles [x, y] = 0;
-			}
-		}
 	}
 
 	private void RandomFill() {
@@ -73,12 +68,25 @@ public class Map {
 
 	private void AddRoom(Room newRoom) {
 		CreateRoom (newRoom);
-		if (rooms.Count > 0) {
+		var roomCount = rooms.Count;
+		if (roomCount > 0) {
 			AddTunnel (newRoom);
 		}
 		lastX = newRoom.GetCenterX ();
 		lastY = newRoom.GetCenterY ();
+		if (roomCount > 0) {
+			tiles [lastX, lastY] = 2;
+			tiles [lastX + 1, lastY] = roomCount + 2;
+		}
 		rooms.Enqueue (newRoom);
+	}
+
+	private void CreateRoom(Room room) {
+		for (int x = room.x1; x < room.x2 - 1; x++) {
+			for (int y = room.y1; y < room.y2 - 1; y++) {
+				tiles [x, y] = 0;
+			}
+		}
 	}
 
 	private void AddTunnel(Room newRoom) {
@@ -108,23 +116,6 @@ public class Map {
 
 	public int GetPlayerX(){ return rooms.Peek ().GetCenterX (); }
 	public int GetPlayerY(){ return rooms.Peek ().GetCenterY (); }
-
-	public void PathFind(int x1, int y1, int x2, int y2) {
-		int[,] visited = (int[,]) tiles.Clone ();
-		int top;
-		if (visited [x1, y1] != 0) {
-//			return null;
-		} else {
-			top = 2;
-//			while (true) {
-//				for (int x = 0; x < width; x++) {
-//					for (int y = 0; y < height; y++) {
-//						
-//					}
-//				}
-//			}
-		}
-	}
 }
 
 public class Room {

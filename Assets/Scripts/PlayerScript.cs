@@ -20,9 +20,13 @@ public class PlayerScript : MonoBehaviour {
 	private DateTime lastDodge;
 
 	// from MinionManager
-	public event Action SpawnMinion = delegate {};
+	private EventsScript EventBus;
+
 
 	void Start () {
+
+		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
+		SpawnMinion ();
 		STATE = State.IDLE;
 		lastDodge = DateTime.Now;
 	}
@@ -53,11 +57,11 @@ public class PlayerScript : MonoBehaviour {
 
 		// CHECK SPAWN MINION STATE - Which is independent of movement state
 		if (Input.GetButtonDown ("Spawn")) {
-			SpawnMinion.Invoke ();
+			SpawnMinion ();
 		}
 
 	}
-
+		
 	void FixedUpdate() {
 
 		Vector2 velocity;
@@ -90,8 +94,8 @@ public class PlayerScript : MonoBehaviour {
 		return DateTime.Now.Subtract (lastDodge).TotalMilliseconds;
 	}
 
-//	private void ChangeColor (Color color) {
-//		this.GetComponent<SpriteRenderer> ().color = color;
-//	}
+	private void SpawnMinion() {
+		EventBus.NewMinion ();
+	}
 	
 }
