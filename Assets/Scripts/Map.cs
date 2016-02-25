@@ -14,7 +14,7 @@ public class Map {
 	private Queue<Room> rooms = new Queue<Room> ();
 
 	private int lastX, lastY;
-	private System.Random pseudorandom = new System.Random (0);
+	private System.Random pseudorandom = new System.Random (1);
 
 
 	public Map(int width, int height){

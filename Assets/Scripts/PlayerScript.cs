@@ -24,11 +24,13 @@ public class PlayerScript : MonoBehaviour {
 
 
 	void Start () {
-
-		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
 		SpawnMinion ();
 		STATE = State.IDLE;
 		lastDodge = DateTime.Now;
+	}
+
+	void Awake() {
+		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
 	}
 
 	void Update () {

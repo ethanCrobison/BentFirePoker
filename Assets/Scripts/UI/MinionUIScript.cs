@@ -6,14 +6,20 @@ public class MinionUIScript : MonoBehaviour {
 
 	private int _OrdinaryMinionCount = 0;
 
-	void Start () {
+	void Awake () {
 		var eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript>();
 		eventBus.EventNewMinion += OnMinionSpawn;
+		eventBus.EventDestroyedMinion += OnMinionDestroy;
 		UpdateMinionCount ();
 	}
 
 	private void OnMinionSpawn() {
-		_OrdinaryMinionCount += 1;
+		_OrdinaryMinionCount++;
+		UpdateMinionCount ();
+	}
+
+	private void OnMinionDestroy () {
+		_OrdinaryMinionCount--;
 		UpdateMinionCount ();
 	}
 

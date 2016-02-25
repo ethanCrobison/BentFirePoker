@@ -18,7 +18,7 @@ public class SpitterScript : MonoBehaviour {
 
 	private static float attackRange = 1.5F;
 	private static float attackCooldown = 1000F;
-	private static float bulletSpeed = 4.0F;
+//	private static float bulletSpeed = 4.0F;
 
 	private DateTime lastAttack;
 
@@ -38,7 +38,6 @@ public class SpitterScript : MonoBehaviour {
 		if (canSee) {
 			float distance = fov.getDistance ();
 			double timeSinceLastAttack = DateTime.Now.Subtract (lastAttack).TotalMilliseconds;
-
 			if (distance < attackRange && timeSinceLastAttack >= attackCooldown) {
 				STATE = State.ATTACKING;			// within attack range
 			} else {
@@ -58,9 +57,9 @@ public class SpitterScript : MonoBehaviour {
 			return;
 
 		case State.ATTACKING:						// ATTACKING: create a bullet
-			bullet = (GameObject)UnityEngine.Object.Instantiate (bullet);
-			bullet.transform.position = transform.position;
-			bullet.GetComponent<BulletScript> ().velocity = fov.getNormalizedDisplacement () * bulletSpeed;
+//			bullet = (GameObject)UnityEngine.Object.Instantiate (bullet);
+//			bullet.transform.position = transform.position;
+//			bullet.GetComponent<BulletScript> ().velocity = fov.getNormalizedDisplacement () * bulletSpeed;
 			break;
 
 		case State.APPROACHING:						// APPROACHING: move towards enemy

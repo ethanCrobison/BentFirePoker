@@ -5,7 +5,6 @@ public class MinionScript : MonoBehaviour {
 	public float speed = 2.0F;
 	public float distanceThresh = 3.0F;
 
-	// TODO make these into a dag
 	private Vector3 targetPosition;
 	private bool hasTarget = false;
 
@@ -32,6 +31,15 @@ public class MinionScript : MonoBehaviour {
 			GoToTargetPos ();	
 		} else {
 			MinionBehavior ();
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Enemy")) {
+			Destroy (other.gameObject);
+			Destroy (this.gameObject);
+			EventsScript eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
+			eventBus.MinionDestroyed ();
 		}
 	}
 

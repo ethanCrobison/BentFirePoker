@@ -14,18 +14,21 @@ public class MinionManager : MonoBehaviour {
 	private float minY = -4;
 	private float maxY =  4;
 
-	private int minionCount;
+	public int minionCount { get; private set; }
 	private int maxMinions = 5;
 
 
 //	private Queue<GameObject> _Minions = new Queue<GameObject>();
 
-	void Start () {
+	void Awake () {
 		minionCount = 0;
 		var eventBus = GameObject.Find("EventBus").GetComponent<EventsScript>();
 		eventBus.EventNewMinion += SpawnNewMinion;
-		// TODO ask Rob why this needs to be here even if the event is called in player
-		SpawnNewMinion ();
+		eventBus.EventDestroyedMinion += DestroyMinion;
+	}
+
+	private void DestroyMinion() {
+		minionCount--;
 	}
 
 	private void SpawnNewMinion() {

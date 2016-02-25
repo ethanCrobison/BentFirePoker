@@ -12,6 +12,7 @@ public class MapGenerator : MonoBehaviour {
 
 	public GameObject WallPrefab;
 	public GameObject TreasurePrefab;
+	public GameObject Enemyprefab;
 
 	private Queue<GameObject> _WallsInUse = new Queue<GameObject>();
 	private Queue<GameObject> _WallsAvailable = new Queue<GameObject>();
@@ -50,8 +51,11 @@ public class MapGenerator : MonoBehaviour {
 					case Map.Treasure:
 						PlaceTreasure (x, y);
 						break;
-//					default:
-						
+					case 0:
+						break;
+					default:
+						PlaceEnemy (x, y);
+						break;
 					}
 				}
 			}
@@ -75,6 +79,12 @@ public class MapGenerator : MonoBehaviour {
 	private void PlaceTreasure(int x, int y) {
 		GameObject treasure = GameObject.Instantiate (TreasurePrefab);
 		var trans = treasure.transform;
+		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
+	}
+
+	private void PlaceEnemy(int x, int y) {
+		GameObject enemy = GameObject.Instantiate (Enemyprefab);
+		var trans = enemy.transform;
 		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
 	}
 }
