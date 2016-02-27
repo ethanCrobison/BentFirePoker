@@ -17,7 +17,6 @@ public class MinionManager : MonoBehaviour {
 	private int minionCount;
 	private int maxMinions = 5;
 
-
 //	private Queue<GameObject> _Minions = new Queue<GameObject>();
 
 	void Awake () {
@@ -25,6 +24,7 @@ public class MinionManager : MonoBehaviour {
 		var eventBus = GameObject.Find("EventBus").GetComponent<EventsScript>();
 		eventBus.EventNewMinion += SpawnNewMinion;
 		eventBus.EventDestroyedMinion += DestroyMinion;
+
 	}
 
 	private void DestroyMinion() {
@@ -41,9 +41,7 @@ public class MinionManager : MonoBehaviour {
 		}
 	}
 	private Vector2 NewSpawnPoint () {
-		var x = this.transform.position.x + UnityEngine.Random.Range (minX, maxX);
-		var y = this.transform.position.y + UnityEngine.Random.Range (minY, maxY);
-		return new Vector2 (x, y);
+		return this.gameObject.transform.position;
 	}
 
 	public bool Capacity() {
