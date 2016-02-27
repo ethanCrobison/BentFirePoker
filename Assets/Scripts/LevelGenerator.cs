@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-public class MapGenerator : MonoBehaviour {
+public class LevelGenerator : MonoBehaviour {
 
 	public int width;
 	public int height;
