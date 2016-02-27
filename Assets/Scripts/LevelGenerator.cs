@@ -49,12 +49,12 @@ public class LevelGenerator : MonoBehaviour {
 						PlaceWall (x, y);
 						break;
 					case Map.Treasure:
-//						PlaceTreasure (x, y);
+						PlaceTreasure (x, y);
 						break;
-					case 0:
+					case Map.Enemy:
+						PlaceEnemy (x, y);
 						break;
 					default:
-//						PlaceEnemy (x, y);
 						break;
 					}
 				}

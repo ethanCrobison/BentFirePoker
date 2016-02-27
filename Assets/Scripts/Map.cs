@@ -8,13 +8,14 @@ public class Map {
 
 	public const int Wall = 1;
 	public const int Treasure = 2;
+	public const int Enemy = 3;
 
 	private int width, height;
 	public int[,] tiles { get; private set;}
 	private Queue<Room> rooms = new Queue<Room> ();
 
 	private int lastX, lastY;
-	private System.Random pseudorandom = new System.Random (1);
+	private System.Random pseudorandom = new System.Random (System.DateTime.Now.GetHashCode());
 
 
 	public Map(int width, int height){
@@ -76,8 +77,8 @@ public class Map {
 		lastX = newRoom.GetCenterX ();
 		lastY = newRoom.GetCenterY ();
 		if (roomCount > 0) {
-			tiles [lastX, lastY] = 2;
-			tiles [lastX + 1, lastY] = roomCount + 2;
+			tiles [lastX, lastY] = Map.Treasure;
+			tiles [lastX + 1, lastY] = Map.Enemy;
 		}
 		rooms.Enqueue (newRoom);
 	}
