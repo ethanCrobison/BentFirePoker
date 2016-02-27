@@ -19,7 +19,7 @@ public class LevelGenerator : MonoBehaviour {
 
 	[Range(0,100)] public int randomFillPercent;
 
-	int[,] map;
+	public int[,] map { get; private set;}
 
 	void Start() {
 		GenerateMap();
