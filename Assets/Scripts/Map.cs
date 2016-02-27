@@ -105,13 +105,17 @@ public class Map {
 	}
 
 	private void CreateHorizontalTunnel(int x1, int x2, int y){
-		for (int x = x1; x < x2; x++) {
+		int start = Mathf.Min (x1, x2);
+		int end = Mathf.Max (x1, x2);
+		for (int x = start; x < end; x++) {
 			tiles [x, y] = 0;
 		}
 	}
 
 	private void CreateVerticalTunnel(int y1, int y2, int x){
-		for (int y = y1; y < y2; y++) {
+		int start = Mathf.Min (y1, y2);
+		int end = Mathf.Max (y1, y2);
+		for (int y = start; y < end; y++) {
 			tiles [x, y] = 0;
 		}
 	}
