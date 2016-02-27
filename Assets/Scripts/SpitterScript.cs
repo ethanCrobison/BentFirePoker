@@ -19,10 +19,9 @@ public class SpitterScript : MonoBehaviour {
 	private static float attackRange = 4.0F;
 	private static float attackCooldown = 500F;
 
-
 	private DateTime lastAttack;
 
-	public GameObject bullet;
+	public GameObject bulletPrefab;
 
 	void Start () {
 		STATE = State.IDLE;
@@ -62,9 +61,9 @@ public class SpitterScript : MonoBehaviour {
 
 		case State.ATTACKING:						// ATTACKING: create a bullet
 			lastAttack = DateTime.Now;
-			bullet = GameObject.Instantiate (bullet);
-			bullet.transform.position = this.transform.position;
-			bullet.GetComponent<BulletScript> ().direction = fov.getNormalizedDisplacement ();
+
+			GameObject newBullet = (GameObject) GameObject.Instantiate (bulletPrefab, this.transform.position, Quaternion.identity);
+			newBullet.GetComponent<BulletScript> ().direction = fov.getNormalizedDisplacement ();
 			break;
 
 		case State.APPROACHING:						// APPROACHING: move towards enemy

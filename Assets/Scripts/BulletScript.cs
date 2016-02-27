@@ -4,9 +4,16 @@ using System.Collections;
 public class BulletScript : MonoBehaviour {
 
 	public static float bulletSpeed = 5.0F;
+	public static float lifeTime = 1.0F;		// life span in seconds
 	public Vector3 direction;
 
 	void FixedUpdate() {
+		
+//		lifeTime -= Time.fixedDeltaTime;
+//		if (lifeTime <= 0) {
+//			Destroy (this.gameObject);
+//		}
+
 		transform.Translate (direction * bulletSpeed * Time.fixedDeltaTime);
 	}
 
@@ -17,8 +24,6 @@ public class BulletScript : MonoBehaviour {
 			player.GetComponent<PlayerScript> ().STATE = PlayerScript.State.DEAD;
 		}
 
-		Debug.Log (other.tag);
-
-		Destroy (gameObject);
+		Destroy (this.gameObject);
 	}
 }
