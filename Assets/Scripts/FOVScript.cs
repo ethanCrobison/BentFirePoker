@@ -30,8 +30,8 @@ public class FOVScript : MonoBehaviour
 		return Vector2.Distance (transform.position, target.position);
 	}
 
-	public Vector2 getNormalizedDisplacement() {
-		Vector2 displacement = (target.position - transform.position);
+	public Vector3 getNormalizedDisplacement() {
+		Vector3 displacement = (target.position - transform.position);
 		displacement.Normalize ();
 		return displacement;
 	}

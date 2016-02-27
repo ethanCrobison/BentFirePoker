@@ -14,11 +14,11 @@ public class SpitterScript : MonoBehaviour {
 
 	private FOVScript fov;
 
-	private static float walkingSpeed = 4.0F;
+	private static float walkingSpeed = 3.0F;
 
-	private static float attackRange = 1.5F;
-	private static float attackCooldown = 1000F;
-//	private static float bulletSpeed = 4.0F;
+	private static float attackRange = 4.0F;
+	private static float attackCooldown = 500F;
+
 
 	private DateTime lastAttack;
 
@@ -38,8 +38,12 @@ public class SpitterScript : MonoBehaviour {
 		if (canSee) {
 			float distance = fov.getDistance ();
 			double timeSinceLastAttack = DateTime.Now.Subtract (lastAttack).TotalMilliseconds;
-			if (distance < attackRange && timeSinceLastAttack >= attackCooldown) {
-				STATE = State.ATTACKING;			// within attack range
+			if (distance < attackRange) {
+				if (timeSinceLastAttack >= attackCooldown) {
+					STATE = State.ATTACKING;		// within attack range and able to attack
+				} else {
+					STATE = State.IDLE;				// within attack range but on cooldown
+				}
 			} else {
 				STATE = State.APPROACHING;			// not within attack range
 			}
@@ -57,9 +61,10 @@ public class SpitterScript : MonoBehaviour {
 			return;
 
 		case State.ATTACKING:						// ATTACKING: create a bullet
-//			bullet = (GameObject)UnityEngine.Object.Instantiate (bullet);
-//			bullet.transform.position = transform.position;
-//			bullet.GetComponent<BulletScript> ().velocity = fov.getNormalizedDisplacement () * bulletSpeed;
+			lastAttack = DateTime.Now;
+			bullet = GameObject.Instantiate (bullet);
+			bullet.transform.position = this.transform.position;
+			bullet.GetComponent<BulletScript> ().direction = fov.getNormalizedDisplacement ();
 			break;
 
 		case State.APPROACHING:						// APPROACHING: move towards enemy
