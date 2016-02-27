@@ -29,7 +29,6 @@ public class Map {
 		}
 		RandomFill();
 		PlaceEmpties ();
-		Debug.Log (NeighborCount (1, 1));
 	}
 
 	private void RandomFill() {
