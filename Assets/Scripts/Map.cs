@@ -28,6 +28,8 @@ public class Map {
 			}
 		}
 		RandomFill();
+		PlaceEmpties ();
+		Debug.Log (NeighborCount (1, 1));
 	}
 
 	private void RandomFill() {
@@ -114,9 +116,34 @@ public class Map {
 		}
 	}
 
+	private void PlaceEmpties() {
+		for (int x = 1; x < width - 1; x++) {
+			for (int y = 1; y < height - 1; y++) {
+				if (NeighborCount (x, y) > 7) {
+					tiles [x, y] = -1;
+				}
+			}
+		}
+	}
+
+	private int NeighborCount(int gridx, int gridy) {		
+		int count = 0;
+		for (int x = gridx - 1; x <= gridx + 1; x++) {
+			for (int y = gridy - 1; y <= gridy + 1; y++) {
+				if (x != gridx || y != gridy) {
+					if (tiles [x, y] == 1 || tiles [x, y] == -1 ) {
+						count++;
+					}
+				}
+			}
+		}
+		return count;
+	}
+
 	public int GetPlayerX(){ return rooms.Peek ().GetCenterX (); }
 	public int GetPlayerY(){ return rooms.Peek ().GetCenterY (); }
 }
+
 
 public class Room {
 	public int x1, y1, x2, y2;

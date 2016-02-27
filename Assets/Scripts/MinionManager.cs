@@ -14,7 +14,7 @@ public class MinionManager : MonoBehaviour {
 	private float minY = -4;
 	private float maxY =  4;
 
-	public int minionCount { get; private set; }
+	private int minionCount;
 	private int maxMinions = 5;
 
 
@@ -44,5 +44,9 @@ public class MinionManager : MonoBehaviour {
 		var x = this.transform.position.x + UnityEngine.Random.Range (minX, maxX);
 		var y = this.transform.position.y + UnityEngine.Random.Range (minY, maxY);
 		return new Vector2 (x, y);
-	}		
+	}
+
+	public bool Capacity() {
+		return this.minionCount < 5;
+	}
 }

@@ -16,7 +16,7 @@ public class EventsScript : MonoBehaviour {
 
 	public void NewMinion() {
 		// TODO any validation?
-		if (MinionManager.minionCount < 5) {
+		if (MinionManager.Capacity()) {
 			this.EventNewMinion.Invoke ();
 		}
 	}
