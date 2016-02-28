@@ -77,7 +77,7 @@ public class Map {
 		lastX = newRoom.GetCenterX ();
 		lastY = newRoom.GetCenterY ();
 		if (roomCount > 0) {
-			tiles [lastX, lastY] = Map.Treasure;
+			tiles [lastX - 1, lastY] = Map.Treasure;
 			tiles [lastX + 1, lastY] = Map.Enemy;
 		}
 		rooms.Enqueue (newRoom);

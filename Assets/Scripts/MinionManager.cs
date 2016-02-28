@@ -9,11 +9,6 @@ public class MinionManager : MonoBehaviour {
 
 	public event Action NewMinion = delegate {};
 
-	private float minX = -4;
-	private float maxX =  4;
-	private float minY = -4;
-	private float maxY =  4;
-
 	private int minionCount;
 	private int maxMinions = 5;
 
@@ -36,12 +31,9 @@ public class MinionManager : MonoBehaviour {
 			NewMinion.Invoke ();
 
 			GameObject minion = GameObject.Instantiate (MinionPrefab);
-			minion.transform.position = NewSpawnPoint ();
+			minion.transform.position = this.gameObject.transform.position;
 			minionCount++;
 		}
-	}
-	private Vector2 NewSpawnPoint () {
-		return this.gameObject.transform.position;
 	}
 
 	public bool Capacity() {
