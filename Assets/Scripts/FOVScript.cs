@@ -14,13 +14,15 @@ public class FOVScript : MonoBehaviour
 		thisCircleCollider = GetComponent<CircleCollider2D> ();
 	}
 
-	public bool canSeePlayer()
+	public bool canSeePlayer(int mask)
 	{
 		Vector2 currentLocation = transform.position;
 		Vector2 playerLocation = target.position;
 
 		thisCircleCollider.enabled = false;
-		RaycastHit2D hit = Physics2D.Raycast (currentLocation, playerLocation - currentLocation);
+
+		RaycastHit2D hit = Physics2D.Raycast (currentLocation, playerLocation - currentLocation, Mathf.Infinity, mask);
+
 		thisCircleCollider.enabled = true;
 
 		return (hit.collider.gameObject.tag == "Player");
