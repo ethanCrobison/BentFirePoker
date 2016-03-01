@@ -21,17 +21,23 @@ public class SpitterScript : MonoBehaviour {
 
 	private DateTime lastAttack;
 
+	// layer mask for raycasting
+	private int mask;
+
 	public GameObject bulletPrefab;
 
 	void Start () {
 		STATE = State.IDLE;
 		fov = GetComponent<FOVScript> ();
 		lastAttack = DateTime.Now;
+
+		// ignore enemies, enemy projectiles, and environment
+		mask = ~(6 << 10);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		bool canSee = fov.canSeePlayer ();
+		bool canSee = fov.canSeePlayer (mask);
 
 		// Unobstructed raycast between enemy and player
 		if (canSee) {
