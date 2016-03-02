@@ -26,6 +26,8 @@ public class SpitterScript : MonoBehaviour {
 
 	public GameObject bulletPrefab;
 
+	Vector3 lastSeenPosition;
+
 	void Start () {
 		STATE = State.IDLE;
 		fov = GetComponent<FOVScript> ();
@@ -41,6 +43,7 @@ public class SpitterScript : MonoBehaviour {
 
 		// Unobstructed raycast between enemy and player
 		if (canSee) {
+			lastSeenPosition = GameObject.FindGameObjectWithTag ("Player").transform.position;
 			float distance = fov.getDistance ();
 			double timeSinceLastAttack = DateTime.Now.Subtract (lastAttack).TotalMilliseconds;
 			if (distance < attackRange) {
@@ -53,7 +56,9 @@ public class SpitterScript : MonoBehaviour {
 				STATE = State.APPROACHING;			// not within attack range
 			}
 		} else {
-			STATE = State.IDLE;						// unaware of player
+			if (Vector3.Distance (lastSeenPosition, transform.position) < Mathf.Epsilon) {
+				STATE = State.IDLE;
+			}
 		}
 
 	}
@@ -73,7 +78,7 @@ public class SpitterScript : MonoBehaviour {
 			break;
 
 		case State.APPROACHING:						// APPROACHING: move towards enemy
-			Vector2 velocity = fov.getNormalizedDisplacement() * walkingSpeed;
+			Vector2 velocity = (lastSeenPosition-transform.position).normalized * walkingSpeed;
 			transform.Translate (velocity * Time.fixedDeltaTime);
 			break;
 

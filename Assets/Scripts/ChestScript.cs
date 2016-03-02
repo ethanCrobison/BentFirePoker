@@ -4,6 +4,7 @@ using System.Collections;
 public class ChestScript : MonoBehaviour {
 
 	public Sprite openedChest;
+	public GameObject spinningCoin;
 
 	private enum State
 	{
@@ -29,7 +30,12 @@ public class ChestScript : MonoBehaviour {
 			EventBus.TreasureCollected ();
 			STATE = State.OPENED;
 			this.GetComponent<SpriteRenderer> ().sprite = openedChest;
-			this.GetComponent<AudioSource> ().Play ();
+			this.GetComponents<AudioSource> ()[0].Play ();
+			this.GetComponents<AudioSource> ()[1].Play ();
+
+			GameObject.Instantiate (spinningCoin);
+
+			spinningCoin.transform.position = gameObject.transform.position;
 		}
 	}
 }
