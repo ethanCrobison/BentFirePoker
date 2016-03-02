@@ -25,7 +25,11 @@ public class FOVScript : MonoBehaviour
 
 		thisCircleCollider.enabled = true;
 
-//		Debug.Log (hit.collider.gameObject.tag);
+		if (hit == null) {
+			return false;
+		}
+
+		Debug.Log (hit.collider);
 
 		return (hit.collider.gameObject.tag == "Player");
 	}
