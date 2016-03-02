@@ -28,7 +28,7 @@ public class ChestScript : MonoBehaviour {
 			return;
 		}
 
-		if (collider.gameObject.tag == "Player") {
+		if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Minion") {
 			STATE = State.OPENED;
 			this.GetComponent<SpriteRenderer> ().sprite = openedChest;
 			this.GetComponent<AudioSource> ().Play ();

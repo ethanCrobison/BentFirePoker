@@ -22,6 +22,8 @@ public class BulletScript : MonoBehaviour {
 		if (other.tag == "Player") {
 			GameObject player = other.gameObject;
 			player.GetComponent<PlayerScript> ().STATE = PlayerScript.State.DEAD;
+		} else if (other.tag == "Minion") {
+			other.GetComponent<MinionScript> ().Die ();
 		}
 
 		Destroy (this.gameObject);

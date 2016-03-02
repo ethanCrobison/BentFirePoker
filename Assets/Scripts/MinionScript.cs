@@ -36,12 +36,17 @@ public class MinionScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Enemy")) {
-			EventsScript eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
-			eventBus.MinionDestroyed ();
+			Die ();
 			Destroy (other.gameObject);
-			Destroy (this.gameObject);
 
 		}
+	}
+
+	public void Die() {
+		// TODO bad practice but final demo is today
+		EventsScript eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
+		eventBus.MinionDestroyed ();
+		Destroy (this.gameObject);
 	}
 
 	private void FollowPlayer() {
