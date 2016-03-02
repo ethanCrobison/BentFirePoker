@@ -9,14 +9,16 @@ public class EventsScript : MonoBehaviour {
 
 	// variables for all of the managers
 	private MinionManager MinionManager;
+	private TreasureManager TM;
 
 	void Awake() {
 		MinionManager = GameObject.FindGameObjectWithTag("Player").GetComponent<MinionManager>();
+		TM = GameObject.Find ("TreasureManager").GetComponent<TreasureManager> ();
 	}
 
 	public void NewMinion() {
 		// TODO any validation?
-		if (MinionManager.Capacity()) {
+		if (MinionManager.Capacity() && TM.Capacity()) {
 			this.EventNewMinion.Invoke ();
 		}
 	}

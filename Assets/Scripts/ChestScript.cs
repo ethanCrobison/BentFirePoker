@@ -12,16 +12,13 @@ public class ChestScript : MonoBehaviour {
 	};
 	private State STATE;
 
-	// Use this for initialization
+	private EventsScript EventBus;
+
 	void Start () {
 		STATE = State.CLOSED;
+		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-		
-	}
+
 
 	void OnCollisionEnter2D (Collision2D collider) {
 		if (STATE == State.OPENED) {
@@ -29,6 +26,7 @@ public class ChestScript : MonoBehaviour {
 		}
 
 		if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Minion") {
+			EventBus.TreasureCollected ();
 			STATE = State.OPENED;
 			this.GetComponent<SpriteRenderer> ().sprite = openedChest;
 			this.GetComponent<AudioSource> ().Play ();
