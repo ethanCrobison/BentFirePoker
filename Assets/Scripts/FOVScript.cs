@@ -29,8 +29,6 @@ public class FOVScript : MonoBehaviour
 			return false;
 		}
 
-		Debug.Log (hit.collider);
-
 		return (hit.collider.gameObject.tag == "Player");
 	}
 

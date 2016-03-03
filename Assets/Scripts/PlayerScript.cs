@@ -36,8 +36,11 @@ public class PlayerScript : MonoBehaviour {
 
 
 	void Update () {
-		if (STATE == State.DEAD)
+		if (STATE == State.DEAD) {
+			Debug.Log ("You are dead.");
 			return;
+		}
+			
 
 		// CHECK MOVEMENT STATE
 		if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
