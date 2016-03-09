@@ -27,7 +27,7 @@ public class FOVScript : MonoBehaviour
 		RaycastHit2D hit = Physics2D.Raycast (currentLocation, playerLocation - currentLocation, sightRange, mask);
 		thisCollider.enabled = true;
 
-		if (hit == null) {
+		if (hit.collider == null) {
 			return false;
 		}
 

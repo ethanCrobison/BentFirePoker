@@ -46,6 +46,7 @@ public class MinionScript : MonoBehaviour {
 		// TODO bad practice but final demo is today
 		EventsScript eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
 		eventBus.MinionDestroyed ();
+
 		Destroy (this.gameObject);
 	}
 
