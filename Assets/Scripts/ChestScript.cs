@@ -36,6 +36,7 @@ public class ChestScript : MonoBehaviour {
 
 			spinningCoin = GameObject.Instantiate (spinningCoin);
 			spinningCoin.transform.position = gameObject.transform.position;
+			spinningCoin.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 5.0F);
 			this.GetComponents<AudioSource> ()[1].Play ();
 		}
 	}
