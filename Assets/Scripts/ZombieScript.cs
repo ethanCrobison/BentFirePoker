@@ -27,7 +27,7 @@ public class ZombieScript : MonoBehaviour {
 
 	Vector3 lastSeenPosition;
 
-	public Animator myAnimator;
+	private Animator myAnimator;
 
 	void Start () {
 		STATE = State.IDLE;
@@ -81,6 +81,9 @@ public class ZombieScript : MonoBehaviour {
 			GameObject eventBus = GameObject.Find ("EventBus");
 			EventsScript es = eventBus.GetComponent<EventsScript> ();
 			es.PlayerHit ();
+
+			AudioSource biteSound = gameObject.GetComponent<AudioSource> ();
+			biteSound.Play ();
 
 			break;
 
