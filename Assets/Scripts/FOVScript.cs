@@ -20,15 +20,8 @@ public class FOVScript : MonoBehaviour
 		Vector2 playerLocation = target.position;
 
 		thisCircleCollider.enabled = false;
-
-
 		RaycastHit2D hit = Physics2D.Raycast (currentLocation, playerLocation - currentLocation, sightRange, mask);
-
 		thisCircleCollider.enabled = true;
-
-		if (hit == null) {
-			return false;
-		}
 
 		return (hit.collider.gameObject.tag == "Player");
 	}

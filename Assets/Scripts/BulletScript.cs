@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour {
 
-	public static float bulletSpeed = 5.0F;
+	public static float bulletSpeed = 2.5F;
 	public static float lifeTime = 1.0F;		// life span in seconds
 	public Vector3 direction;
 
