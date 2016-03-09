@@ -40,7 +40,7 @@ public class SpitterScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bool canSee = fov.canSeePlayer (Mathf.Infinity, mask);
+		bool canSee = fov.canSeePlayer (sightRange, mask);
 
 		// Unobstructed raycast between enemy and player
 		if (canSee) {

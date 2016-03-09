@@ -21,6 +21,7 @@ public class FOVScript : MonoBehaviour
 
 		thisCircleCollider.enabled = false;
 
+
 		RaycastHit2D hit = Physics2D.Raycast (currentLocation, playerLocation - currentLocation, sightRange, mask);
 
 		thisCircleCollider.enabled = true;
