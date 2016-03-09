@@ -31,7 +31,7 @@ public class Map {
 				tiles [x, y] = Wall;
 			}
 		}
-		this.ExitInd = pseudorandom.Next (5,12);
+		this.ExitInd = pseudorandom.Next (2, 7);
 		RandomFill();
 		PlaceEmpties ();
 	}
