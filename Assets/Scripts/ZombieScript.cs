@@ -14,7 +14,7 @@ public class ZombieScript : MonoBehaviour {
 
 	private FOVScript fov;
 
-	private static float walkingSpeed = 2.0F;
+	private static float walkingSpeed = 2.5F;
 
 	private static float sightRange = 10.0F;
 	private static float attackRange = 0.75F;
