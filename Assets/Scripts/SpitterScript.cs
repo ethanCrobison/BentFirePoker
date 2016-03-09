@@ -17,7 +17,7 @@ public class SpitterScript : MonoBehaviour {
 	private static float walkingSpeed = 3.0F;
 
 	private static float sightRange = 10.0F;
-	private static float attackRange = 4.0F;
+	private static float attackRange = 10.0F;
 	private static float attackCooldown = 250F;
 
 	private DateTime lastAttack;

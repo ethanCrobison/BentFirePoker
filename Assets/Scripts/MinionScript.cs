@@ -12,6 +12,8 @@ public class MinionScript : MonoBehaviour {
 	private Transform PlayerTrans;
 	private Action MinionBehavior;
 
+	public GameObject explosion;
+
 	void Awake() {
 		PlayerTrans = GameObject.FindGameObjectWithTag ("Player").transform;
 		MinionBehavior = FollowPlayer;
@@ -46,6 +48,9 @@ public class MinionScript : MonoBehaviour {
 		// TODO bad practice but final demo is today
 		EventsScript eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
 		eventBus.MinionDestroyed ();
+
+		GameObject myExplosion = GameObject.Instantiate (explosion);
+		myExplosion.transform.position = this.transform.position;
 
 		Destroy (this.gameObject);
 	}
