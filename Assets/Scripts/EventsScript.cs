@@ -20,6 +20,7 @@ public class EventsScript : MonoBehaviour {
 	}
 
 	public void NewMinion() {
+		
 		if (MinionManager.Capacity() && TM.Capacity()) {
 			this.EventNewMinion.Invoke ();
 		}
