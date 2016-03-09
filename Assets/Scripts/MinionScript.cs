@@ -2,7 +2,7 @@
 using System;
 
 public class MinionScript : MonoBehaviour {
-	public float speed = 2.0F;
+	public float speed = 10.0F;
 	public float distanceThresh = 3.0F;
 
 	private Vector3 targetPosition;

@@ -18,7 +18,7 @@ public class SpitterScript : MonoBehaviour {
 
 	private static float sightRange = 10.0F;
 	private static float attackRange = 4.0F;
-	private static float attackCooldown = 500F;
+	private static float attackCooldown = 250F;
 
 	private DateTime lastAttack;
 
@@ -40,7 +40,7 @@ public class SpitterScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bool canSee = fov.canSeePlayer (Mathf.Infinity, mask);
+		bool canSee = fov.canSeePlayer (sightRange, mask);
 
 		// Unobstructed raycast between enemy and player
 		if (canSee) {
