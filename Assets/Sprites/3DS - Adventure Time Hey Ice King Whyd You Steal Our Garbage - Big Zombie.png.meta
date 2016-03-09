@@ -1,0 +1,789 @@
+fileFormatVersion: 2
+guid: 4254a9fecc78c4d2f8a0063dbc266cb8
+timeCreated: 1457495986
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_0
+    21300002: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_1
+    21300004: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_2
+    21300006: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_3
+    21300008: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_4
+    21300010: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_5
+    21300012: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_6
+    21300014: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_7
+    21300016: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_8
+    21300018: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_9
+    21300020: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_10
+    21300022: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_11
+    21300024: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_12
+    21300026: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_13
+    21300028: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_14
+    21300030: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_15
+    21300032: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_16
+    21300034: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_17
+    21300036: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_18
+    21300038: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_19
+    21300040: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_20
+    21300042: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_21
+    21300044: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_22
+    21300046: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_23
+    21300048: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_24
+    21300050: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_25
+    21300052: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_26
+    21300054: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_27
+    21300056: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_28
+    21300058: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_29
+    21300060: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_30
+    21300062: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_31
+    21300064: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_32
+    21300066: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_33
+    21300068: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_34
+    21300070: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_35
+    21300072: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_36
+    21300074: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_37
+    21300076: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_38
+    21300078: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_39
+    21300080: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_40
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 296
+        width: 8
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 296
+        width: 4
+        height: 5
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 231
+        width: 40
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 54}
+        - {x: 13, y: 57}
+        - {x: -15, y: 57}
+        - {x: -20, y: 50}
+        - {x: -20, y: 3}
+        - {x: -19, y: 0}
+        - {x: 9, y: 0}
+        - {x: 19, y: 15}
+        - {x: 20, y: 18}
+        - {x: 20, y: 40}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 231
+        width: 41
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 57}
+        - {x: -19.5, y: 53}
+        - {x: -20.5, y: 44}
+        - {x: -20.5, y: 3}
+        - {x: -18.5, y: 0}
+        - {x: 11.5, y: 0}
+        - {x: 20.5, y: 16}
+        - {x: 20.5, y: 42}
+        - {x: 18.5, y: 57}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 231
+        width: 42
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 57}
+        - {x: -21, y: 49}
+        - {x: -21, y: 0}
+        - {x: 21, y: 0}
+        - {x: 21, y: 57}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 231
+        width: 41
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 56}
+        - {x: -13.5, y: 56}
+        - {x: -20.5, y: 54}
+        - {x: -20.5, y: 2}
+        - {x: -18.5, y: 0}
+        - {x: 10.5, y: 0}
+        - {x: 20.5, y: 12}
+        - {x: 20.5, y: 39}
+        - {x: 16.5, y: 55}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_6
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 231
+        width: 39
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 57}
+        - {x: -19.5, y: 57}
+        - {x: -19.5, y: 1}
+        - {x: -18.5, y: 0}
+        - {x: 11.5, y: 0}
+        - {x: 19.5, y: 17}
+        - {x: 19.5, y: 52}
+        - {x: 18.5, y: 56}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_7
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 231
+        width: 39
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 57}
+        - {x: -16.5, y: 51}
+        - {x: -19.5, y: 42}
+        - {x: -19.5, y: 3}
+        - {x: -18.5, y: 0}
+        - {x: 8.5, y: 0}
+        - {x: 19.5, y: 14}
+        - {x: 19.5, y: 41}
+        - {x: 15.5, y: 57}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_8
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 231
+        width: 38
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 57}
+        - {x: -19, y: 53}
+        - {x: -19, y: 1}
+        - {x: -18, y: 0}
+        - {x: 13, y: 0}
+        - {x: 19, y: 5}
+        - {x: 19, y: 57}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 223
+        width: 15
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 223
+        width: 4
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_11
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 154
+        width: 41
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 56}
+        - {x: -15.5, y: 56}
+        - {x: -20.5, y: 45}
+        - {x: -20.5, y: 6}
+        - {x: -18.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 20.5, y: 10}
+        - {x: 20.5, y: 38}
+        - {x: 15.5, y: 53}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_12
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 154
+        width: 41
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 58}
+        - {x: -20.5, y: 1}
+        - {x: -13.5, y: 0}
+        - {x: 3.5, y: 0}
+        - {x: 20.5, y: 9}
+        - {x: 20.5, y: 58}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_13
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 154
+        width: 41
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 59}
+        - {x: -20.5, y: 57}
+        - {x: -20.5, y: 0}
+        - {x: 7.5, y: 0}
+        - {x: 20.5, y: 8}
+        - {x: 20.5, y: 59}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_14
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 154
+        width: 42
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 60}
+        - {x: -21, y: 7}
+        - {x: -12, y: 0}
+        - {x: 4, y: 0}
+        - {x: 21, y: 18}
+        - {x: 21, y: 50}
+        - {x: 16, y: 60}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_15
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 154
+        width: 41
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 60}
+        - {x: -20.5, y: 2}
+        - {x: -18.5, y: 0}
+        - {x: 1.5, y: 0}
+        - {x: 20.5, y: 15}
+        - {x: 20.5, y: 45}
+        - {x: 14.5, y: 60}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_16
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 154
+        width: 41
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 60}
+        - {x: -18.5, y: 56}
+        - {x: -20.5, y: 45}
+        - {x: -20.5, y: 8}
+        - {x: -16.5, y: 0}
+        - {x: 15.5, y: 0}
+        - {x: 20.5, y: 1}
+        - {x: 20.5, y: 60}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_17
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 154
+        width: 41
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 59}
+        - {x: -20.5, y: 56}
+        - {x: -20.5, y: 2}
+        - {x: -19.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 20.5, y: 14}
+        - {x: 20.5, y: 59}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_18
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 154
+        width: 38
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 58}
+        - {x: -19, y: 57}
+        - {x: -19, y: 4}
+        - {x: -14, y: 0}
+        - {x: 19, y: 0}
+        - {x: 19, y: 58}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_19
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 154
+        width: 44
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 52}
+        - {x: -22, y: 44}
+        - {x: -22, y: 2}
+        - {x: -19, y: 0}
+        - {x: 15, y: 0}
+        - {x: 22, y: 10}
+        - {x: 22, y: 52}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_20
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 154
+        width: 42
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 54}
+        - {x: -21, y: 0}
+        - {x: 14, y: 0}
+        - {x: 21, y: 15}
+        - {x: 21, y: 49}
+        - {x: 20, y: 54}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 146
+        width: 11
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_22
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 146
+        width: 4
+        height: 5
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_23
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 146
+        width: 4
+        height: 5
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_24
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 146
+        width: 4
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_25
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 81
+        width: 41
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 57}
+        - {x: -20.5, y: 50}
+        - {x: -20.5, y: 3}
+        - {x: -19.5, y: 0}
+        - {x: 9.5, y: 0}
+        - {x: 20.5, y: 10}
+        - {x: 20.5, y: 42}
+        - {x: 14.5, y: 57}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_26
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 81
+        width: 42
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 56}
+        - {x: -14, y: 56}
+        - {x: -20, y: 54}
+        - {x: -21, y: 48}
+        - {x: -21, y: 7}
+        - {x: -18, y: 0}
+        - {x: 9, y: 0}
+        - {x: 21, y: 14}
+        - {x: 21, y: 48}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_27
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 81
+        width: 44
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 50}
+        - {x: -22, y: 39}
+        - {x: -22, y: 0}
+        - {x: 5, y: 0}
+        - {x: 22, y: 13}
+        - {x: 22, y: 36}
+        - {x: 18, y: 50}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_28
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 81
+        width: 45
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 49}
+        - {x: -22.5, y: 40}
+        - {x: -22.5, y: 0}
+        - {x: 4.5, y: 0}
+        - {x: 22.5, y: 14}
+        - {x: 22.5, y: 43}
+        - {x: 16.5, y: 49}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_29
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 81
+        width: 44
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 49}
+        - {x: -15, y: 49}
+        - {x: -22, y: 32}
+        - {x: -22, y: 12}
+        - {x: -20, y: 0}
+        - {x: 7, y: 0}
+        - {x: 22, y: 12}
+        - {x: 22, y: 37}
+        - {x: 21, y: 46}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_30
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 81
+        width: 42
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 56}
+        - {x: -21, y: 50}
+        - {x: -21, y: 0}
+        - {x: 15, y: 0}
+        - {x: 21, y: 13}
+        - {x: 21, y: 51}
+        - {x: 20, y: 56}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_31
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 73
+        width: 5
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_32
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 73
+        width: 7
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_33
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 73
+        width: 5
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_34
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 73
+        width: 4
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_35
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 40
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 64}
+        - {x: -20, y: 15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 20, y: 9}
+        - {x: 20, y: 56}
+        - {x: 11, y: 64}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_36
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 0
+        width: 42
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 64}
+        - {x: -21, y: 10}
+        - {x: -12, y: 0}
+        - {x: 15, y: 0}
+        - {x: 21, y: 22}
+        - {x: 21, y: 47}
+        - {x: 16, y: 64}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_37
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 56
+        width: 4
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_38
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 56
+        width: 4
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_39
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 46
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 60}
+        - {x: -19, y: 54}
+        - {x: -20, y: 40}
+        - {x: -20, y: 13}
+        - {x: -15, y: 0}
+        - {x: 12, y: 0}
+        - {x: 23, y: 9}
+        - {x: 23, y: 60}
+      - - {x: -19, y: 50}
+        - {x: -20, y: 50}
+        - {x: -23, y: 48}
+        - {x: -23, y: 39}
+        - {x: -19, y: 39}
+        - {x: -16, y: 43}
+        - {x: -16, y: 47}
+      - - {x: -19, y: 62}
+        - {x: -23, y: 62}
+        - {x: -23, y: 54}
+        - {x: -18, y: 54}
+        - {x: -17, y: 57}
+        - {x: -17, y: 61}
+      - - {x: -15, y: 62}
+        - {x: -15, y: 61}
+        - {x: -12, y: 58}
+        - {x: -11, y: 58}
+        - {x: -8, y: 61}
+        - {x: -8, y: 62}
+    - name: 3DS - Adventure Time Hey Ice King Whyd You Steal Our Garbage - Big Zombie_40
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 0
+        width: 47
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.5, y: 59}
+        - {x: -7.5, y: 59}
+        - {x: -17.5, y: 55}
+        - {x: -19.5, y: 46}
+        - {x: -19.5, y: 0}
+        - {x: 17.5, y: 0}
+        - {x: 23.5, y: 11}
+        - {x: 23.5, y: 42}
+        - {x: 20.5, y: 55}
+      - - {x: -20.5, y: 50}
+        - {x: -23.5, y: 49}
+        - {x: -23.5, y: 39}
+        - {x: -19.5, y: 40}
+        - {x: -18.5, y: 43}
+        - {x: -18.5, y: 48}
+      - - {x: -23.5, y: 61}
+        - {x: -23.5, y: 54}
+        - {x: -20.5, y: 54}
+        - {x: -18.5, y: 56}
+        - {x: -18.5, y: 59}
+        - {x: -20.5, y: 61}
+      - - {x: -13.5, y: 59}
+        - {x: -10.5, y: 60}
+        - {x: -10.5, y: 63}
+        - {x: -15.5, y: 63}
+        - {x: -15.5, y: 61}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
