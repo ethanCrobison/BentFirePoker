@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour {
 	// from MinionManager
 	private EventsScript EventBus;
 
+	public GameObject explosion;
 
 	void Awake() {
 		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
@@ -106,7 +107,14 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	private void Die() {
+		if (this.STATE == State.DEAD) {
+			return;
+		}
+
 		this.STATE = State.DEAD;
+		gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+		GameObject myExplosion = GameObject.Instantiate (explosion);
+		myExplosion.transform.position = gameObject.transform.position;
 	}
 
 }

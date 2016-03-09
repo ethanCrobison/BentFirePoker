@@ -14,12 +14,13 @@ public class EventsScript : MonoBehaviour {
 	private MinionManager MinionManager;
 	private TreasureManager TM;
 
-	void Awake() {
+	void Start() {
 		MinionManager = GameObject.FindGameObjectWithTag("Player").GetComponent<MinionManager>();
 		TM = GameObject.Find ("TreasureManager").GetComponent<TreasureManager> ();
 	}
 
 	public void NewMinion() {
+		
 		if (MinionManager.Capacity() && TM.Capacity()) {
 			this.EventNewMinion.Invoke ();
 		}
