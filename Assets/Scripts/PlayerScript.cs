@@ -107,6 +107,7 @@ public class PlayerScript : MonoBehaviour {
 
 	private void Die() {
 		this.STATE = State.DEAD;
+
 	}
 
 }
