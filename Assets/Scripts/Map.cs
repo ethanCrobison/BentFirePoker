@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 
 public class Map {
-	private static int MINROOMSIZE = 10;
-	private static int MAXROOMSIZE = 15;
+	private static int MINROOMSIZE = 8;
+	private static int MAXROOMSIZE = 12;
 	private static int MAXROOMCOUNT = 40;
 
 	public const int Wall = 1;

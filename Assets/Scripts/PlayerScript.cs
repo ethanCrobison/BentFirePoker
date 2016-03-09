@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Awake() {
 		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
+		EventBus.EventPlayerHit += Die;
 	}
 
 
@@ -37,7 +38,6 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update () {
 		if (STATE == State.DEAD) {
-			Debug.Log ("You are dead.");
 			return;
 		}
 			
@@ -104,5 +104,9 @@ public class PlayerScript : MonoBehaviour {
 	private void SpawnMinion() {
 		EventBus.NewMinion ();
 	}
-	
+
+	private void Die() {
+		this.STATE = State.DEAD;
+	}
+
 }
