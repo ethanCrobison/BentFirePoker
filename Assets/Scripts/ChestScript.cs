@@ -33,9 +33,9 @@ public class ChestScript : MonoBehaviour {
 			this.GetComponents<AudioSource> ()[0].Play ();
 			this.GetComponents<AudioSource> ()[1].Play ();
 
-			GameObject.Instantiate (spinningCoin);
+//			GameObject.Instantiate (spinningCoin);
 
-			spinningCoin.transform.position = gameObject.transform.position;
+//			spinningCoin.transform.position = gameObject.transform.position;
 		}
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TreasureManager : MonoBehaviour {
 
-	private int TreasureCount = 11;
+	private int TreasureCount = 10;
 	private EventsScript EventBus;
 
 	// Use this for initialization

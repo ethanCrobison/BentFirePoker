@@ -20,8 +20,10 @@ public class BulletScript : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 
 		if (other.tag == "Player") {
-			GameObject player = other.gameObject;
-			player.GetComponent<PlayerScript> ().STATE = PlayerScript.State.DEAD;
+//			GameObject player = other.gameObject;
+//			player.GetComponent<PlayerScript> ().STATE = PlayerScript.State.DEAD;
+			var EventBus = GameObject.Find("EventBus").GetComponent<EventsScript>();
+			EventBus.PlayerHit ();
 		} else if (other.tag == "Minion") {
 			other.GetComponent<MinionScript> ().Die ();
 		}
