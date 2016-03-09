@@ -7,6 +7,7 @@ public class EventsScript : MonoBehaviour {
 	public event Action EventTreasureCollected = delegate {};
 	public event Action EventDestroyedMinion = delegate {};
 	public event Action EventPlayerHit = delegate {};
+	public event Action EventPlayerDeath = delegate {};
 
 	// variables for all of the managers
 	private MinionManager MinionManager;
@@ -36,4 +37,7 @@ public class EventsScript : MonoBehaviour {
 		this.EventPlayerHit.Invoke ();
 	}
 
+	public void PlayerDie () {
+		this.EventPlayerDeath.Invoke ();
+	}
 }

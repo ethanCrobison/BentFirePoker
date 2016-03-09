@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Awake() {
 		EventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
-		EventBus.EventPlayerHit += Die;
+		EventBus.EventPlayerDeath += Die;
 	}
 
 

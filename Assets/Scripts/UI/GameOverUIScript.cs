@@ -6,7 +6,7 @@ public class GameOverUIScript : MonoBehaviour {
 
 	void Start () {
 		var eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
-		eventBus.EventPlayerHit += PlayerDeath;
+		eventBus.EventPlayerDeath += PlayerDeath;
 	}
 
 	private void PlayerDeath() {
