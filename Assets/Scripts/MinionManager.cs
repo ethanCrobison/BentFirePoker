@@ -10,7 +10,7 @@ public class MinionManager : MonoBehaviour {
 	public event Action NewMinion = delegate {};
 
 	private int minionCount;
-	private int maxMinions = 5;
+	private int maxMinions = 99;
 
 //	private Queue<GameObject> _Minions = new Queue<GameObject>();
 
@@ -37,6 +37,6 @@ public class MinionManager : MonoBehaviour {
 	}
 
 	public bool Capacity() {
-		return this.minionCount < 5;
+		return this.minionCount < maxMinions;
 	}
 }

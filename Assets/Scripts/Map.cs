@@ -10,6 +10,7 @@ public class Map {
 	public const int Treasure = 2;
 	public const int Enemy = 3;
 	public const int Zombie = 4;
+	public const int Exit = 5;
 
 	private int width, height;
 	public int[,] tiles { get; private set;}
@@ -18,6 +19,7 @@ public class Map {
 	private int lastX, lastY;
 	private System.Random pseudorandom = new System.Random (System.DateTime.Now.GetHashCode());
 
+	private int ExitInd;
 
 	public Map(int width, int height){
 		this.width = width;
@@ -29,6 +31,7 @@ public class Map {
 				tiles [x, y] = Wall;
 			}
 		}
+		this.ExitInd = pseudorandom.Next (5,12);
 		RandomFill();
 		PlaceEmpties ();
 	}
@@ -86,6 +89,12 @@ public class Map {
 			} else {
 				tiles [lastX + 1, lastY] = Map.Zombie;
 			}
+			if (this.ExitInd == 0) {
+				tiles [lastX + 2, lastY + 2] = Map.Exit;
+				this.ExitInd--;
+			} else {
+				this.ExitInd--;
+			}
 		}
 		rooms.Enqueue (newRoom);
 	}
@@ -106,8 +115,8 @@ public class Map {
 			CreateHorizontalTunnel(lastX, newX, lastY);
 			CreateVerticalTunnel (lastY, newY, newX);
 		} else {
-			CreateVerticalTunnel (lastY, newY, lastX);
 			CreateHorizontalTunnel(lastX, newX, newY);
+			CreateVerticalTunnel (lastY, newY, lastX);
 		}
 	}
 

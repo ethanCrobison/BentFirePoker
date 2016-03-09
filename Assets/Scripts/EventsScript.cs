@@ -8,6 +8,7 @@ public class EventsScript : MonoBehaviour {
 	public event Action EventDestroyedMinion = delegate {};
 	public event Action EventPlayerHit = delegate {};
 	public event Action EventPlayerDeath = delegate {};
+	public event Action EventExitReached = delegate {};
 
 	// variables for all of the managers
 	private MinionManager MinionManager;
@@ -19,7 +20,6 @@ public class EventsScript : MonoBehaviour {
 	}
 
 	public void NewMinion() {
-		// TODO any validation?
 		if (MinionManager.Capacity() && TM.Capacity()) {
 			this.EventNewMinion.Invoke ();
 		}
@@ -39,5 +39,9 @@ public class EventsScript : MonoBehaviour {
 
 	public void PlayerDie () {
 		this.EventPlayerDeath.Invoke ();
+	}
+
+	public void ExitReached() {
+		this.EventExitReached.Invoke ();
 	}
 }

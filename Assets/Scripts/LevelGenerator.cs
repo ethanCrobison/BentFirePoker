@@ -14,6 +14,7 @@ public class LevelGenerator : MonoBehaviour {
 	public GameObject TreasurePrefab;
 	public GameObject Enemyprefab;
 	public GameObject Zombieprefab;
+	public GameObject ExitPrefab;
 
 	private Queue<GameObject> _WallsInUse = new Queue<GameObject>();
 	private Queue<GameObject> _WallsAvailable = new Queue<GameObject>();
@@ -23,11 +24,17 @@ public class LevelGenerator : MonoBehaviour {
 	public int[,] map { get; private set;}
 
 	void Start() {
-		GenerateMap();
-		PlaceTiles ();
+		var eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
+		eventBus.EventExitReached += Init;
+		Init ();
 	}
 
-	void GenerateMap() {
+	private void Init() {
+		GenerateMap();
+		PlaceTiles ();		
+	}
+
+	private void GenerateMap() {
 		GameObject wall;
 		while (_WallsInUse.Count > 0) {
 			wall = _WallsInUse.Dequeue ();
@@ -58,6 +65,9 @@ public class LevelGenerator : MonoBehaviour {
 					case Map.Zombie:
 						PlaceZombie (x, y);
 						break;
+					case Map.Exit:
+						PlaceThing (x, y, ExitPrefab);
+						break;
 					default:
 						break;
 					}
@@ -78,6 +88,12 @@ public class LevelGenerator : MonoBehaviour {
 		var trans = wall.transform;
 		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
 		_WallsInUse.Enqueue (wall);
+	}
+
+	private void PlaceThing(int x, int y, GameObject thing) {
+		GameObject thingGO = GameObject.Instantiate (thing);
+		var trans = thingGO.transform;
+		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
 	}
 
 	private void PlaceTreasure(int x, int y) {
