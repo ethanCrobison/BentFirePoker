@@ -9,6 +9,7 @@ public class Map {
 	public const int Wall = 1;
 	public const int Treasure = 2;
 	public const int Enemy = 3;
+	public const int Zombie = 4;
 
 	private int width, height;
 	public int[,] tiles { get; private set;}
@@ -78,7 +79,13 @@ public class Map {
 		lastY = newRoom.GetCenterY ();
 		if (roomCount > 0) {
 			tiles [lastX - 1, lastY] = Map.Treasure;
-			tiles [lastX + 1, lastY] = Map.Enemy;
+
+			bool coin = Random.Range (0.0F, 1.0F) > 0.75F;
+			if (coin) {
+				tiles [lastX + 1, lastY] = Map.Enemy;
+			} else {
+				tiles [lastX + 1, lastY] = Map.Zombie;
+			}
 		}
 		rooms.Enqueue (newRoom);
 	}

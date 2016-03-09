@@ -13,6 +13,7 @@ public class LevelGenerator : MonoBehaviour {
 	public GameObject WallPrefab;
 	public GameObject TreasurePrefab;
 	public GameObject Enemyprefab;
+	public GameObject Zombieprefab;
 
 	private Queue<GameObject> _WallsInUse = new Queue<GameObject>();
 	private Queue<GameObject> _WallsAvailable = new Queue<GameObject>();
@@ -54,6 +55,9 @@ public class LevelGenerator : MonoBehaviour {
 					case Map.Enemy:
 						PlaceEnemy (x, y);
 						break;
+					case Map.Zombie:
+						PlaceZombie (x, y);
+						break;
 					default:
 						break;
 					}
@@ -85,6 +89,12 @@ public class LevelGenerator : MonoBehaviour {
 	private void PlaceEnemy(int x, int y) {
 		GameObject enemy = GameObject.Instantiate (Enemyprefab);
 		var trans = enemy.transform;
+		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
+	}
+
+	private void PlaceZombie(int x, int y) {
+		GameObject zombie = GameObject.Instantiate (Zombieprefab);
+		var trans = zombie.transform;
 		trans.position = new Vector3 (0.5F + x, 0.5F + y, 0F);
 	}
 }
