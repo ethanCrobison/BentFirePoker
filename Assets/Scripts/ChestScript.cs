@@ -27,15 +27,16 @@ public class ChestScript : MonoBehaviour {
 		}
 
 		if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Minion") {
+//			int numCoins = (int) Random.Range (1.0F, 5.0F);
+
 			EventBus.TreasureCollected ();
 			STATE = State.OPENED;
 			this.GetComponent<SpriteRenderer> ().sprite = openedChest;
 			this.GetComponents<AudioSource> ()[0].Play ();
+
+			spinningCoin = GameObject.Instantiate (spinningCoin);
+			spinningCoin.transform.position = gameObject.transform.position;
 			this.GetComponents<AudioSource> ()[1].Play ();
-
-//			GameObject.Instantiate (spinningCoin);
-
-//			spinningCoin.transform.position = gameObject.transform.position;
 		}
 	}
 }

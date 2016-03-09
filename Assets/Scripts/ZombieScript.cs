@@ -77,6 +77,11 @@ public class ZombieScript : MonoBehaviour {
 		case State.ATTACKING:						// ATTACKING: create a bullet
 			lastAttack = DateTime.Now;
 			myAnimator.SetTrigger ("isAttacking");
+
+			GameObject eventBus = GameObject.Find ("EventBus");
+			EventsScript es = eventBus.GetComponent<EventsScript> ();
+			es.PlayerHit ();
+
 			break;
 
 		case State.APPROACHING:						// APPROACHING: move towards enemy
