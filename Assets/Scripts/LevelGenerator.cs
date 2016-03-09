@@ -24,8 +24,8 @@ public class LevelGenerator : MonoBehaviour {
 	public int[,] map { get; private set;}
 
 	void Start() {
-		var eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
-		eventBus.EventExitReached += Init;
+//		var eventBus = GameObject.Find ("EventBus").GetComponent<EventsScript> ();
+//		eventBus.EventExitReached += Init;
 		Init ();
 	}
 
